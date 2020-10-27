@@ -6,6 +6,9 @@
       </tr>
     </thead>
     <tbody *ngIf="this.data">
+      <tr *ngIf="this.data.length === 0">
+        <td colspan="headers.length">Not data were found</td>
+      </tr>
       <tr *ngFor="let item of this.data; let i = index">
         <td *ngIf="showIndex" scope="row">{{i+1}}</td>
         <td *ngFor="let field of item">{{field}}</td>
