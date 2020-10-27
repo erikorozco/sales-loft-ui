@@ -1,0 +1,18 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th *ngIf="showIndex" scope="col">#</th>
+        <th *ngFor="let header of headers" scope="col">{{header}}</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="this.data">
+      <tr *ngFor="let item of this.data; let i = index">
+        <td *ngIf="showIndex" scope="row">{{i+1}}</td>
+        <td *ngFor="let field of item">{{field}}</td>
+      </tr>
+    </tbody>
+    <div *ngIf="!this.data" class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </table>
+  

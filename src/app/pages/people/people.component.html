@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row people-results">
+        <div class="col-md-12">
+          <app-people-actions (actionsHandler)="executeAction($event)"></app-people-actions>
+        </div>
+    </div>
+  <div class="row">
+      <div [ngSwitch]="action" class="col-md-12">
+        <ng-container *ngSwitchCase="'listPeople'">
+          <app-people-results></app-people-results>
+        </ng-container>
+        <ng-container *ngSwitchCase="'listCharacterFrequency'">
+          <app-people-character-frecuency></app-people-character-frecuency>
+        </ng-container>
+        <ng-container *ngSwitchCase="'listSimilarEmails'">
+          <app-people-results></app-people-results>
+        </ng-container>
+      </div>
+  </div>
+</div>
