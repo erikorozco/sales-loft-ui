@@ -47,7 +47,7 @@ export class PeopleService {
   }
 
   getSimilarEmails(): Promise<any> {
-    return this.http.get<any>(`${this.baseUrl}people`).toPromise();;
+    return this.http.get<any>(`${this.baseUrl}people/similar-emails`).toPromise();;
   }
 
 }
